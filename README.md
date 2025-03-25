@@ -24,7 +24,7 @@ This project uses historical Apple stock data and machine learning to predict th
 ```
 .
 ├── data/
-│   ├── apple_stock.csv             # Raw data
+│   ├── apple_stock.csv             # Raw data (sourced from Kaggle)
 │   └── processed_stock.csv         # Cleaned & feature-engineered data
 │
 ├── models/
@@ -38,62 +38,63 @@ This project uses historical Apple stock data and machine learning to predict th
 
 ---
 
-## 🧪 Requirements
+## 🧭 User Guide
 
+There are two ways to access and use the Apple Stock Price Predictor:
+
+### ✅ Option 1: Use the Deployed Streamlit Dashboard
+No setup required. Simply open the hosted application in your browser:
+
+🔗 **[Streamlit App Link](https://wguc964-mmcyvzxbtvyujgjeutbxmx.streamlit.app/)** 
+
+---
+
+### 💻 Option 2: Run the Application Locally
+
+#### Requirements
 - Python 3.10+
-- Streamlit
-- Pandas
-- NumPy
-- scikit-learn
-- matplotlib
-- yfinance
+- Git (if cloning from GitLab)
+- Internet connection (for real-time data via yfinance)
 
-Install all dependencies:
+#### Installation Steps
+
+1. **Clone the repository:**
+```bash
+git clone https://gitlab.com/your-username/apple-stock-predictor.git
+cd apple-stock-predictor
+```
+
+2. **Create and activate a virtual environment (recommended):**
+```bash
+python -m venv .venv
+.venv\Scripts\activate       # Windows
+source .venv/bin/activate    # macOS/Linux
+```
+
+3. **Install dependencies:**
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-## 🖥️ Run the App Locally
-
-1. Clone or download this repository:
-   ```bash
-   git clone https://github.com/your-username/apple-stock-predictor.git
-   cd apple-stock-predictor
-   ```
-
-2. Create and activate a virtual environment (recommended):
-   ```bash
-   python -m venv .venv
-   .venv\Scripts\activate  # Windows
-   source .venv/bin/activate  # macOS/Linux
-   ```
-
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Run the Streamlit app:
-   ```bash
-   streamlit run main.py
-   ```
+4. **Run the Streamlit app:**
+```bash
+streamlit run main.py
+```
 
 ---
 
-## 🧠 Train Your Own Model
+## 🧠 Train Your Own Model (Optional)
 
-If you want to retrain the model:
+To retrain the model using the dataset:
 ```bash
 python train_model.py
 ```
-This script compares:
+This will evaluate:
 - OLS Regression
-- Support Vector Machine
+- Support Vector Machine (SVM)
 - Random Forest
 
-The best model (based on RMSE and R² score) is saved as `best_stock_model.pkl`.
+The best model is saved automatically as `models/best_stock_model.pkl`.
 
 ---
 
@@ -105,15 +106,8 @@ The best model (based on RMSE and R² score) is saved as `best_stock_model.pkl`.
 
 ---
 
-## 📦 Deployment
-
-You can deploy the app on [Streamlit Cloud](https://streamlit.io/cloud). Just upload the code and dependencies.
-
----
-
 ## 🔐 Disclaimer
 This tool is for educational purposes and should not be used for financial decisions.
 
 ---
-
 
